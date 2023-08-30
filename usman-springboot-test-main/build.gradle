@@ -1,0 +1,46 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.usman.springboot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+
+    implementation 'org.springframework.retry:spring-retry:1.3.2'
+    implementation 'org.springframework:spring-webflux:5.3.17'
+    implementation 'io.projectreactor.netty:reactor-netty:1.0.17'
+    implementation 'io.projectreactor:reactor-test:3.4.21'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.1'
+
+
+    implementation 'com.microsoft.sqlserver:mssql-jdbc'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+    implementation 'org.flywaydb:flyway-core:8.2.2'
+    runtimeOnly 'org.postgresql:postgresql'
+    testRuntimeOnly 'com.h2database:h2:2.1.210'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
